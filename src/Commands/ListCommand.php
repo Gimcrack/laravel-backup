@@ -35,7 +35,7 @@ class ListCommand extends BaseCommand
         $this->table($headers, $rows);
     }
 
-    public function convertToRow(BackupDestinationStatus $backupDestinationStatus): array
+    public function convertToRow(BackupDestinationStatus $backupDestinationStatus)
     {
         $row = [
             $backupDestinationStatus->backupName(),
@@ -60,7 +60,7 @@ class ListCommand extends BaseCommand
         return $row;
     }
 
-    protected function applyStylingToRow(array $row, BackupDestinationStatus $backupDestinationStatus): array
+    protected function applyStylingToRow(array $row, BackupDestinationStatus $backupDestinationStatus)
     {
         if ($backupDestinationStatus->newestBackupIsTooOld() || (! $backupDestinationStatus->dateOfNewestBackup())) {
             $row['newest'] = "<error>{$row['newest']}</error>";

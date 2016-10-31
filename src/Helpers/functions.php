@@ -2,7 +2,7 @@
 
 use Spatie\Backup\Helpers\ConsoleOutput;
 
-function consoleOutput(): ConsoleOutput
+function consoleOutput()
 {
     return app(ConsoleOutput::class);
 }

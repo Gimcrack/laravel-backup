@@ -41,7 +41,7 @@ class EventHandler
         return app($notifiableClass);
     }
 
-    protected function determineNotification($event): Notification
+    protected function determineNotification($event)
     {
         $eventName = class_basename($event);
 
@@ -60,7 +60,7 @@ class EventHandler
         return app($notificationClass)->setEvent($event);
     }
 
-    protected function allBackupEventClasses(): array
+    protected function allBackupEventClasses()
     {
         return [
             BackupHasFailed::class,
